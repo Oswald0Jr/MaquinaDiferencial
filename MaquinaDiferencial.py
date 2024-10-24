@@ -1,7 +1,7 @@
 
 # funcao recursiva para calcular as diferencas finitas
 def diferencas_finitas_recursivo(valores, ordem=1):
-    """Calcula a diferença de ordem 'ordem' de forma recursiva."""
+    """calcula a diferença de ordem 'ordem' de forma recursiva."""
     if ordem == 1:
         return [valores[i+1] - valores[i] for i in range(len(valores) - 1)]
     else:
@@ -9,7 +9,7 @@ def diferencas_finitas_recursivo(valores, ordem=1):
 
 # funcao para montar a tabela de diferencas recursivamente
 def montar_tabela_diferencas(valores):
-    """Monta a tabela de diferenças completa recursivamente"""
+    """monta a tabela de diferenças completa recursivamente"""
     tabela = [valores]
     for ordem in range(1, len(valores)):
         tabela.append(diferencas_finitas_recursivo(tabela[ordem - 1]))
@@ -17,7 +17,7 @@ def montar_tabela_diferencas(valores):
 
 # funcao recursiva para interpolacao
 def interpolar_recursivo(tabela_dif, x_valores, x, s=None, grau=None, ordem=0):
-    """Interpolação recursiva para polinomios de qualquer grau"""
+    """interpolacao recursiva para polinomios de qualquer grau"""
     if ordem == 0:
         h = x_valores[1] - x_valores[0]  # espacamento entre valores de x
         s = (x - x_valores[0]) / h  # fator de interpolacao
